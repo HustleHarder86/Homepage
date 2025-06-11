@@ -14,23 +14,39 @@ export default function Homepage() {
         </nav>
       </header>
 
-      <section className="min-h-screen bg-white flex flex-col items-center justify-center px-6 text-center">
-        <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
-            Real estate investing <span className="text-green-600 underline decoration-green-300">made simple</span>
+      <section
+        id="hero"
+        className="relative flex items-center justify-center text-center min-h-screen bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 max-w-4xl px-6"
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">
+            Real estate investing{' '}
+            <span className="text-green-300 underline decoration-green-300">made simple</span>
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-600">
+          <p className="mt-6 text-lg md:text-xl text-gray-100">
             Discover cash-flow positive properties in seconds. Empower your clients with investment-ready listings, instantly.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition">
+            <a
+              href="#app"
+              className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition"
+            >
               Get Started Free
-            </button>
-            <button className="text-green-600 font-medium underline hover:text-green-700">
-              Watch Demo
-            </button>
+            </a>
+            <button className="text-green-200 font-medium underline hover:text-white">Watch Demo</button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section id="pricing" className="py-20 bg-gray-100 text-center">
